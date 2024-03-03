@@ -12,6 +12,14 @@ namespace Tetris
         public int y;
         public char ch;
 
+        public Point(int x, int y, char ch)
+        {
+            this.x = x;
+            this.y = y;
+            this.ch = ch;
+        }
+
+        public Point() { }
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
