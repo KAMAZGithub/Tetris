@@ -6,28 +6,20 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.SetWindowSize(40, 30);
-            Console.SetBufferSize(40, 30);
+   class Program
+   {
+      static void Main(string[] args)
+      {
+         Console.SetWindowSize(40, 30);
+         Console.SetBufferSize(40, 30);
 
-            //Point p1 = new Point(1, 1, '*');
-            //p1.Draw();
+         Figure[] figures = new Figure[2];
+         figures[0] = new Square(2, 2, '+');
+         figures[1] = new Stick(5, 2, '-');
 
-            //Point p2 = new Point()
-            //{
-            //    x = 2,
-            //    y = 2,
-            //    ch = '*'
-            //};
-            //p2.Draw();
+         foreach (Figure f in figures)
+            f.Draw();
+      }
 
-            Square s = new Square(2, 5, '*');
-            s.Draw();
-
-        }
-
-    }
+   }
 }
