@@ -15,5 +15,10 @@ namespace Tetris
             points[2] = new Point(x, y + 1, ch);
             points[3] = new Point(x + 1, y + 1, ch);
         }
+
+      public override void Rotate()
+      {
+
+      }
     }
 }

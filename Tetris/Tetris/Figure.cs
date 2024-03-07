@@ -24,6 +24,8 @@ namespace Tetris
          }
       }
 
+      public abstract void Rotate();
+
       public void Hide()
       {
          foreach(Point p in points)
