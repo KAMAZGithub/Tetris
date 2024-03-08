@@ -7,24 +7,16 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-   class Program
-   {
-      static void Main(string[] args)
-      {
-         Console.SetWindowSize(40, 30);
-         Console.SetBufferSize(40, 30);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.SetWindowSize(40, 30);
+            Console.SetBufferSize(40, 30);
 
-         Figure sq = new Stick(10, 5, '*');         
-         sq.Draw();
-         Thread.Sleep(1000);
+            FigureGenerator generator = new FigureGenerator(20, 0, '*');
+            Figure fg = generator.GetNewFigure();
+        }
 
-         sq.Hide();
-         sq.Rotate();
-         sq.Draw();
-
-         Thread.Sleep(1000);
-
-      }
-
-   }
+    }
 }

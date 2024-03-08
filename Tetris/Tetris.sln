@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetris", "Tetris\Tetris.csproj", "{087333E9-7A93-40A8-80C1-76F8664A2973}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enums", "Enums\Enums.csproj", "{1122E592-991C-496C-ADC8-D9072406FAD1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{C43925E1-8699-4ED5-B4AF-BC336930E495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randomizer", "Randomizer\Randomizer.csproj", "{370FF0EE-F5E4-412D-99C3-E4BB8925888F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C43925E1-8699-4ED5-B4AF-BC336930E495}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C43925E1-8699-4ED5-B4AF-BC336930E495}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C43925E1-8699-4ED5-B4AF-BC336930E495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370FF0EE-F5E4-412D-99C3-E4BB8925888F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370FF0EE-F5E4-412D-99C3-E4BB8925888F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370FF0EE-F5E4-412D-99C3-E4BB8925888F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370FF0EE-F5E4-412D-99C3-E4BB8925888F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
