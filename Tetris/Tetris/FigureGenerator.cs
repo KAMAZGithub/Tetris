@@ -10,7 +10,7 @@ namespace Tetris
 
         private Random _rnd = new Random();
 
-        FigureGenerator(int x, int y, char ch)
+        public FigureGenerator(int x, int y, char ch)
         {
             _x = x;
             _y = y;

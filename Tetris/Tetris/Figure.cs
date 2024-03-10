@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-   class Figure
+   abstract class Figure
    {
       protected Point[] points = new Point[4];
 
