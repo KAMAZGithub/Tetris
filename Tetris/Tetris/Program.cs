@@ -7,35 +7,40 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.SetWindowSize(40, 30);
-            Console.SetBufferSize(40, 30);
+   class Program
+   {
+      static void Main(string[] args)
+      {
+         Console.SetWindowSize(40, 30);
+         Console.SetBufferSize(40, 30);
 
-            FigureGenerator generator = new FigureGenerator(20, 0, '*');
-            Figure fg = null;
+         FigureGenerator generator = new FigureGenerator(20, 0, '*');
+         Figure currentFigure = generator.GetNewFigure();
 
-            while (true)
+         while (true)
+         {
+            if (Console.KeyAvailable)
             {
-                FigureFall(out fg, generator);
-                fg.Draw();
+               var key = Console.ReadKey();
+               HandleKey(currentFigure, key);
             }
-        }
+         }
+      }
 
-        private static void FigureFall(out Figure fg, FigureGenerator generator)
-        {
-            fg = generator.GetNewFigure();
-
-            for (int i = 0; i < 20; i++)
-            {
-                fg.Hide();
-                fg.Move(Direction.DOWN);
-                fg.Draw();
-                Thread.Sleep(500);
-            }
-
-        }
-    }
+      private static void HandleKey(Figure currentFigure, ConsoleKeyInfo key)
+      {
+         switch (key.Key)
+         {
+            case ConsoleKey.LeftArrow:
+               currentFigure.Move(Direction.LEFT);
+               break;
+            case ConsoleKey.RightArrow:
+               currentFigure.Move(Direction.RIGHT);
+               break;
+            case ConsoleKey.DownArrow:
+               currentFigure.Move(Direction.DOWN);
+               break;
+         }
+      }
+   }
 }

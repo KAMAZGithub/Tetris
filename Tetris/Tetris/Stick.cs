@@ -11,9 +11,10 @@ namespace Tetris
       public Stick(int x, int y, char ch)
       {
          points[0] = new Point(x, y, ch);
-         points[1] = new Point(x, y+1, ch);
-         points[2] = new Point(x, y+2, ch);
-         points[3] = new Point(x, y+3, ch);
+         points[1] = new Point(x, y + 1, ch);
+         points[2] = new Point(x, y + 2, ch);
+         points[3] = new Point(x, y + 3, ch);
+         Draw();
       }
 
       public override void Rotate()
@@ -39,7 +40,7 @@ namespace Tetris
 
       private void RotateHorisontal()
       {
-         for(int i = 0; i < points.Length; i++)
+         for (int i = 0; i < points.Length; i++)
          {
             points[i].y = points[0].y;
             points[i].x = points[0].x + i;
