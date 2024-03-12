@@ -6,25 +6,33 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-    public class Point
-    {
-        public int x;
-        public int y;
-        public char ch;
+   public class Point
+   {
+      public int x;
+      public int y;
+      public char ch;
 
-        public Point(int x, int y, char ch)
-        {
-            this.x = x;
-            this.y = y;
-            this.ch = ch;
-        }
+      public Point(Point p)
+      {
+         x = p.x;
+         y = p.y;
+         ch = p.ch;
+      }
 
-        public Point() { }
-        public void Draw()
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(ch);
-        }
+      public Point(int x, int y, char ch)
+      {
+         this.x = x;
+         this.y = y;
+         this.ch = ch;
+      }
+
+      public Point() { }
+      public void Draw()
+      {
+         Console.SetCursorPosition(x, y);
+         Console.Write(ch);
+         Console.SetCursorPosition(0, 0);
+      }
 
       internal void Move(Direction dir)
       {
