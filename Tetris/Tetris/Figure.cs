@@ -9,7 +9,7 @@ namespace Tetris
    abstract class Figure
    {
       const int LENGTH = 4;
-      protected Point[] points = new Point[LENGTH];
+      public Point[] points = new Point[LENGTH];
 
       public void Draw()
       {
@@ -34,27 +34,58 @@ namespace Tetris
          }
          Draw();
       }
-      internal void TryMove(Direction dir)
+      internal Result TryMove(Direction dir)
       {
          Hide();
          Point[] clone = Clone();
-
          Move(clone, dir);
-         if (VerifyPosition(clone))
+
+         Result result = VerifyPosition(clone);
+         if (result == Result.SUCCESS)
             points = clone;
+         //if (VerifyPosition(clone))
+         //   points = clone;
 
          Draw();
+
+         return result;
       }
 
-      private bool VerifyPosition(Point[] clone)
+      internal Result TryRotate()
+      {
+         Hide();
+         Point[] clone = Clone();
+         Rotate(clone);
+
+         var result = VerifyPosition(clone);
+         if (result == Result.SUCCESS)
+            points = clone;
+
+         //if (VerifyPosition(clone))
+         //   points = clone;
+
+         Draw();
+         return result;
+      }
+
+      private Result VerifyPosition(Point[] clone)
       {
          foreach(Point p in clone)
          {
-            if (p.x <= 0 || p.y < 0 || p.x >= 40 || p.y >= 30)
-               return false;
+            if (p.Y >= Field.Height)
+               return Result.DOWN_BORDER_STRIKE;
+
+            if (p.X >= Field.Width || p.X < 0 || p.Y < 0)
+               return Result.BORDER_STRIKE;
+
+            if (Field.CheckStrike(p))
+               return Result.HEAP_STRIKE;
+
+            //if (p.X <= 0 || p.Y < 0 || p.X >= Field.Width || p.Y >= Field.Height)
+            //   return false;
          }
 
-         return true;
+         return Result.SUCCESS;
       }
 
       private Point[] Clone()
@@ -68,7 +99,7 @@ namespace Tetris
          return newPoints;
       }
 
-      public abstract void Rotate();
+      public abstract void Rotate(Point[] pList);
 
       public void Hide()
       {
