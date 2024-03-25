@@ -29,9 +29,10 @@ namespace Tetris
       public Point() { }
       public void Draw()
       {
-         Console.SetCursorPosition(X, Y);
-         Console.Write(Ch);
-         Console.SetCursorPosition(0, 0);
+         DrawerProvider.Drawer.DrawPoint(X, Y);
+         //Console.SetCursorPosition(X, Y);
+         //Console.Write(Ch);
+         //Console.SetCursorPosition(0, 0);
       }
 
       internal void Move(Direction dir)

@@ -20,7 +20,7 @@ namespace Tetris
       {
          Console.SetWindowSize(Field.Width+1, Field.Height+1);
          Console.SetBufferSize(Field.Width+1, Field.Height+1);
-
+       
          //Field.Width = 20;
          //Field.Height = 20;
 
